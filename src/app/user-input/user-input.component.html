@@ -1,9 +1,23 @@
 <div class="m-2 p-3 border border-2 border-primary rounded">
     <p>Γράψτε μία λέξη:</p>
     <div class="mb-3 ">
-        <input class="form-control" type="text">
+        <input 
+            (keyup.enter)="onSubmit()"
+            #userInput
+            required
+            name="inputField"
+            [(ngModel)]="inputField"
+            id="inputElement"
+            class="form-control"
+            type="text"
+        >
     </div>
     <div class="my-2">
-        <button class="btn btn-primary btn-sm ">Υποβολή</button>
+        <button 
+            (click)="onSubmit()"
+            class="btn btn-primary btn-sm "
+        >
+            Υποβολή
+        </button>
     </div>
 </div>

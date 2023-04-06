@@ -6,11 +6,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    
-                </td>
-            </tr>
+                <tr *ngFor="let word of oddWords">
+                    <td>{{ word }}</td>
+                </tr>
         </tbody>
     </table>
 </div>

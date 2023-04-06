@@ -1,13 +1,13 @@
 <div class="row justify-content-center">
   <div class="col-5">
     <div class="m-5 p-2 border border-2 border-primary rounded">
-      <app-user-input></app-user-input>
+      <app-user-input [evenWords]="evenWords" [oddWords]="oddWords"></app-user-input>
       <div class="row">
         <div class="col">
-          <app-even-length-words></app-even-length-words>
+          <app-even-length-words [evenWords]="evenWords"></app-even-length-words>
         </div>
         <div class="col">
-          <app-odd-length-words></app-odd-length-words>
+          <app-odd-length-words [oddWords]="oddWords"></app-odd-length-words>
         </div>
       </div>
     </div>
