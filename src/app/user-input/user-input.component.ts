@@ -11,19 +11,23 @@ export class UserInputComponent {
   @Input() @Output() evenWords: string[] = [];
   @Input() @Output() oddWords: string[] = [];
   inputField = '';
+  words: string[] = [];
 
   onSubmit() {
     const userInput = (document.getElementById("inputElement") as HTMLInputElement).value;
     console.log(userInput);
+
     if (userInput) {
-      if (userInput.length % 2 === 0) {
-        this.evenWords.push(userInput);
-        console.log('Even: ' + this.evenWords);
-      } else {
-        this.oddWords.push(userInput);
-        console.log('Odd: ' + this.oddWords);
+      this.words = userInput.trim().split(" ");
+      for (let word in this.words) {
+        if (this.words[word].length % 2 === 0) {
+          this.evenWords.push(this.words[word]);
+        } else {
+          this.oddWords.push(this.words[word]);
+        }
       }
     }
     this.inputField = '';
+    this.words = [];
   }
 }
